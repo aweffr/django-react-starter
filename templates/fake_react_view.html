@@ -1,0 +1,18 @@
+{% load render_bundle from webpack_loader %}
+
+<html>
+<head>
+    {% render_bundle 'runtime-main' 'css' %}
+    {% render_bundle 'undefined' 'css' %}
+    {% render_bundle 'null' 'css' %}
+    {% render_bundle 'main' 'css' %}
+</head>
+<body>
+<div id="root"></div>
+{% render_bundle 'runtime-main' 'js' %}
+{% render_bundle 'undefined' 'js' %}
+{% render_bundle 'null' 'js' %}
+{% render_bundle 'main' 'js' %}
+</body>
+</head>
+</html>
