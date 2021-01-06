@@ -1,16 +1,28 @@
 {% load render_bundle from webpack_loader %}
 
+<!--suppress JSUnresolvedLibraryURL -->
 <html>
 <head>
     {% render_bundle 'runtime-main' 'css' %}
-    {% render_bundle 'undefined' 'css' %}
+    {% if 'undefined' in chunk_names %}
+        {% render_bundle 'undefined' 'css' %}
+    {% endif %}
     {% render_bundle 'null' 'css' %}
     {% render_bundle 'main' 'css' %}
 </head>
 <body>
 <div id="root"></div>
+{% if not debug %}
+    <script src="https://cdn.staticfile.org/react/17.0.1/umd/react.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/moment.js/2.29.1/moment.min.js"></script>
+{% endif %}
+
 {% render_bundle 'runtime-main' 'js' %}
-{% render_bundle 'undefined' 'js' %}
+{% if 'undefined' in chunk_names %}
+    {% render_bundle 'undefined' 'js' %}
+{% endif %}
 {% render_bundle 'null' 'js' %}
 {% render_bundle 'main' 'js' %}
 </body>
