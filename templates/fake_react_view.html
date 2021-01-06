@@ -17,6 +17,22 @@
     <script src="https://cdn.staticfile.org/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
     <script src="https://cdn.staticfile.org/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.staticfile.org/moment.js/2.29.1/moment.min.js"></script>
+
+    <script>
+      if (typeof React === 'undefined') {
+        document.write(unescape("%3Cscript%20src%3D%27/static/webpack_bundle/assets/react.production.min.js%27%20type%3D%27text/javascript%27%3E%3C/script%3E"));
+      }
+      if (typeof ReactDOM === 'undefined') {
+        document.write(unescape("%3Cscript%20src%3D%27/static/webpack_bundle/assets/react-dom.production.min.js%27%20type%3D%27text/javascript%27%3E%3C/script%3E"));
+      }
+      if (typeof axios === 'undefined') {
+        document.write(unescape("%3Cscript%20src%3D%27/static/webpack_bundle/assets/axios.min.js%27%20type%3D%27text/javascript%27%3E%3C/script%3E"));
+      }
+      if (typeof moment === 'undefined') {
+        document.write(unescape("%3Cscript%20src%3D%27/static/webpack_bundle/assets/moment.min.js%27%20type%3D%27text/javascript%27%3E%3C/script%3E"));
+      }
+    </script>
+
 {% endif %}
 
 {% render_bundle 'runtime-main' 'js' %}
