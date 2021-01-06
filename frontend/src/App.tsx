@@ -5,17 +5,12 @@ function App() {
   return (
     <div>
       <div className={styles.App}>
-        I'm the best dev!
-      </div>
-
-      <div className={styles.goodman}>
-        I's the best dev2123
-      </div>
-       <div className={styles.goodman}>
-        I's the best dev2123
-      </div>
-       <div className={styles.goodman}>
-        I's the best dev2123
+        <div>
+          {process.env.NODE_ENV}
+        </div>
+        <div>
+          Lalala Land
+        </div>
       </div>
     </div>
   );
